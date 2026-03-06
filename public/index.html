@@ -667,6 +667,109 @@ footer {
   color: var(--gold-l); margin-bottom: 8px;
 }
 .form-success p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+  /* ── VIDEO SECTION ──────────────────────────────────────────── */
+  .video-section {
+    background: var(--warm-white);
+    padding: 120px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .video-frame-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .video-frame {
+    position: relative; width: 100%; padding-bottom: 56.25%;
+    border-radius: 10px; overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .video-frame iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  .video-cta {
+    display: flex; justify-content: center;
+    margin-top: 44px;
+  }
+
+  /* ── ABOUT SECTION ──────────────────────────────────────────── */
+  .about-section { background: var(--black); padding: 130px 0; }
+
+  .about-founder {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-founder-reverse { direction: rtl; }
+  .about-founder-reverse > * { direction: ltr; }
+
+  .about-photo-wrap {
+    position: relative;
+    width: 390px;
+    flex-shrink: 0;
+  }
+  .about-photo {
+    width: 390px;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 6px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    filter: grayscale(15%);
+    transition: filter 0.4s ease;
+  }
+  .about-photo-wrap:hover .about-photo { filter: grayscale(0%); }
+  .about-photo-accent {
+    position: absolute; bottom: -16px; left: -16px; right: 32px; top: 32px;
+    border: 1px solid var(--gold); border-radius: 6px; z-index: 0;
+    opacity: 0.4;
+  }
+  .about-photo-accent-right { left: 32px; right: -16px; }
+
+  .about-bio { padding-top: 8px; }
+  .about-name-block { margin-bottom: 28px; }
+  .about-bio h3 {
+    font-family: var(--ff-display); font-size: 40px; font-weight: 300;
+    color: white; line-height: 1.1; margin-bottom: 8px; margin-top: 6px;
+  }
+  .about-title {
+    font-size: 12px; font-weight: 400; letter-spacing: 0.04em;
+    color: var(--gold); line-height: 1.5;
+  }
+  .about-bio p {
+    font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.55);
+    line-height: 1.85; margin-bottom: 16px;
+  }
+  .about-credentials {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+    padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .credential {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px; padding: 6px 14px;
+    font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.5);
+  }
+  .credential-icon { font-size: 11px; color: var(--gold); }
+  .about-divider {
+    height: 1px; background: rgba(255,255,255,0.07);
+    margin: 80px 0;
+  }
+
+  @media (max-width: 960px) {
+    .about-founder, .about-founder-reverse {
+      grid-template-columns: 1fr; direction: ltr; gap: 40px;
+    }
+    .about-photo-wrap { width: 100%; max-width: 390px; margin: 0 auto; }
+    .about-photo { width: 100%; max-width: 390px; height: auto; aspect-ratio: 3/4; }
+    .about-photo-accent { display: none; }
+    .about-divider { margin: 56px 0; }
+  }
+
 </style>
 </head>
 <body>
@@ -787,7 +890,7 @@ footer {
         Not sure if MSA is right<br>for your program? <em style="font-style:italic;color:var(--gold)">Watch this first.</em>
       </h2>
     </div>
-    <div class="reveal video-frame-wrap" style="max-width:860px;margin:0 auto">
+    <div class="reveal video-frame-wrap">
       <div class="video-frame">
         <iframe
           src="https://www.youtube.com/embed/2nc8uI_7Rn8?rel=0&modestbranding=1&color=white"
